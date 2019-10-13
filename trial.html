@@ -1,10 +1,10 @@
 <html>
-  <body style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden;'>
   <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
   <script>
-  AFRAME.registerComponent('navigate-on-click', {
+  AFRAME.registerComponent('markerhandler', {
     schema: {
       url: {default: ''}
     },
@@ -26,8 +26,8 @@
         <img id="tmage" src="https://raw.githubusercontent.com/drewzy90/GLB-Models/master/M0012069_web.jpg">
       </a-assets>
       
-      <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" type='barcode' value='1'>
-        <a-image width="9" height="3" rotation="-90 0 0" src="#tmage" navigate-on-click="url: https://google.com"></a-image>
+      <a-marker markerhandler="url: https://google.com" emitevents="true" cursor="rayOrigin: mouse" type='barcode' value='1'>
+        <a-image width="9" height="3" rotation="-90 0 0" src="#tmage"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
 </a-scene>
