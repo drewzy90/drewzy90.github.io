@@ -31,7 +31,7 @@ AFRAME.registerComponent('markerhandler', {
       </a-assets>
       
       <a-marker id="animated-marker" type='barcode' value='1'>
-        <a-image id="animated-model" navigate-on-click="url: https://lfgss.com" emitevents="true" cursor="rayOrigin: mouse" width="9" height="3" rotation="-90 0 0" src="#tmage"></a-image>
+        <a-image id="animated-model" markerhandler="url: https://lfgss.com" emitevents="true" cursor="rayOrigin: mouse" width="9" height="3" rotation="-90 0 0" src="#tmage"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
 </a-scene>
