@@ -3,35 +3,15 @@
   <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
   <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
   <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <script>
-AFRAME.registerComponent('markerhandler', {
-	    schema: {
-      url: {default: ''}
-    },
-    init: function() {
-        const animatedMarker = document.querySelector("#animated-marker");
-        const aEntity = document.querySelector("#animated-model");
-		var data = this.data;
-		var el = this.el;
-		
-        // every click, we make our model grow in size :)
-        animatedMarker.addEventListener('click', function(ev, target){
-            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-            if (aEntity && intersectedElement === aEntity) {
-                window.location.href = data.url;
-            }
-        });
-}});
-</script>
-
+  
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-      <a-assets>
-        <img id="tmage" src="https://raw.githubusercontent.com/drewzy90/GLB-Models/master/M0012069_web.jpg">
-      </a-assets>
+        <a-assets>
+    	<a-asset-item id="tree" src="../untitlel.glb"></a-asset-item>
+  	</a-assets>
       
-      <a-marker id="animated-marker" type='barcode' value='1'>
-        <a-image id="animated-model" markerhandler="url: https://lfgss.com" emitevents="true" cursor="rayOrigin: mouse" width="9" height="3" rotation="-90 0 0" src="#tmage"></a-image>
+      <a-marker type='barcode' value='1'>
+         <a-entity gltf-model="#tree"></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
 </a-scene>
