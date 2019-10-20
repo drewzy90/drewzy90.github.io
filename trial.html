@@ -1,19 +1,19 @@
 <html>
-<body style='margin : 0px; overflow: hidden;'>
-  <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-  <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-  <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  
-<a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-
-        <a-assets>
-    	<a-asset-item id="castle" src="images/castle/scene.gltf"></a-asset-item>
-  	</a-assets>
-      
-      <a-marker type='barcode' value='1'>
-         <a-gltf-model src=”#castle” position=” 0 0 0″ scale=”0.2 0.2 0.2″></a-gltf-model>
-      </a-marker>
-      <a-entity camera></a-entity>
-</a-scene>
-</body>
+  <head>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+      <a-assets>
+    	  <a-asset-item id="castle" src="url(https://drewzy90.github.io/images/castle/scene.gltf"></a-asset-item>
+    	</a-assets>
+    
+     <a-marker type='barcode' value='1'>
+      <a-gltf-model src=”#castle” position=” 0 0 0″ scale=”0.2 0.2 0.2″></a-gltf-model>
+     </a-marker>
+     <a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
